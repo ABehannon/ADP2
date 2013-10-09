@@ -29,7 +29,7 @@ public class Singleton extends Intent{
 	
 	//URL for API
 	public static String APIURL(){
-		URL = "";
+		URL = "http://www.myweather2.com/developer/forecast.ashx?uac=IucBn-/kwC&output=json&query=68118&temp_unit=f&ws_unit=mph";
 		return URL;
 	}
 }

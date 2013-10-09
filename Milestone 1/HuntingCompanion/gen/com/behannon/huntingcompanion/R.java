@@ -24,30 +24,33 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_calls=0x7f08000c;
-        public static final int action_map=0x7f08000d;
-        public static final int action_settings=0x7f08000f;
-        public static final int action_timers=0x7f08000b;
-        public static final int action_trophies=0x7f08000e;
-        public static final int action_weather=0x7f08000a;
-        public static final int button1=0x7f080002;
-        public static final int cityText=0x7f080007;
-        public static final int dawnTimeText=0x7f080005;
-        public static final int duskTimeText=0x7f080006;
-        public static final int infoText1=0x7f080000;
-        public static final int infoText2=0x7f080003;
-        public static final int infoText3=0x7f080004;
-        public static final int listView1=0x7f080001;
-        public static final int tempText=0x7f080009;
-        public static final int weatherText=0x7f080008;
+        public static final int action_calls=0x7f08000e;
+        public static final int action_map=0x7f08000f;
+        public static final int action_settings=0x7f080011;
+        public static final int action_timers=0x7f08000d;
+        public static final int action_trophies=0x7f080010;
+        public static final int action_weather=0x7f08000c;
+        public static final int addButton=0x7f080000;
+        public static final int backButton=0x7f080001;
+        public static final int cityText=0x7f080008;
+        public static final int dawnTimeText=0x7f080006;
+        public static final int duskTimeText=0x7f080007;
+        public static final int infoText1=0x7f080002;
+        public static final int infoText2=0x7f080004;
+        public static final int infoText3=0x7f080005;
+        public static final int listView1=0x7f080003;
+        public static final int tempText=0x7f08000a;
+        public static final int weatherText=0x7f080009;
+        public static final int windText=0x7f08000b;
     }
     public static final class layout {
-        public static final int activity_calls=0x7f030000;
-        public static final int activity_map=0x7f030001;
-        public static final int activity_settings=0x7f030002;
-        public static final int activity_timer=0x7f030003;
-        public static final int activity_trophy=0x7f030004;
-        public static final int activity_weather=0x7f030005;
+        public static final int activity_addtrophy=0x7f030000;
+        public static final int activity_calls=0x7f030001;
+        public static final int activity_map=0x7f030002;
+        public static final int activity_settings=0x7f030003;
+        public static final int activity_timer=0x7f030004;
+        public static final int activity_trophy=0x7f030005;
+        public static final int activity_weather=0x7f030006;
     }
     public static final class menu {
         public static final int main=0x7f070000;

@@ -12,17 +12,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-public class TrophyActivity extends Activity {
+public class AddTrophyActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_trophy);
+		setContentView(R.layout.activity_addtrophy);
 		
-		Button addButton = (Button)findViewById(R.id.addButton);
-		addButton.setOnClickListener(new View.OnClickListener() {
+		Button backButton = (Button)findViewById(R.id.backButton);
+		backButton.setOnClickListener(new View.OnClickListener() {
 		    public void onClick(View v) {
-		        nextActivity();
+		        onBack();
 		    }
 		});
 		
@@ -42,25 +42,26 @@ public class TrophyActivity extends Activity {
 
 		boolean ret = false;
 		if (item.getItemId() == R.id.action_weather) {
-			Intent intent = new Intent(TrophyActivity.this, WeatherActivity.class);
+			Intent intent = new Intent(AddTrophyActivity.this, WeatherActivity.class);
 			startActivity(intent);
 			ret = true;
 		} else if (item.getItemId() == R.id.action_timers) {
-			Intent intent = new Intent(TrophyActivity.this, TimerActivity.class);
+			Intent intent = new Intent(AddTrophyActivity.this, TimerActivity.class);
 			startActivity(intent);
 			ret = true;
 		} else if (item.getItemId() == R.id.action_calls) {
-			Intent intent = new Intent(TrophyActivity.this, CallsActivity.class);
+			Intent intent = new Intent(AddTrophyActivity.this, CallsActivity.class);
 			startActivity(intent);
 			ret = true;
 		} else if (item.getItemId() == R.id.action_map) {
-			Intent intent = new Intent(TrophyActivity.this, MapActivity.class);
+			Intent intent = new Intent(AddTrophyActivity.this, MapActivity.class);
 			startActivity(intent);
 			ret = true;
 		} else if (item.getItemId() == R.id.action_trophies) {
+			onBack();
 			ret = true;
 		} else if (item.getItemId() == R.id.action_settings) {
-			Intent intent = new Intent(TrophyActivity.this, SettingsActivity.class);
+			Intent intent = new Intent(AddTrophyActivity.this, SettingsActivity.class);
 			startActivity(intent);
 			ret = true;
 		} else {
@@ -69,9 +70,9 @@ public class TrophyActivity extends Activity {
 		return ret;
 	}
 	
-	// Called when attempting to open the second activity
-	public void nextActivity() {
-		Intent myIntent = new Intent(TrophyActivity.this, AddTrophyActivity.class);
-		TrophyActivity.this.startActivity(myIntent);
+	//Go back button
+	public void onBack() {
+		// TODO Auto-generated method stub
+		finish();
 	}
 }
