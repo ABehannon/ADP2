@@ -7,10 +7,23 @@
     <uses-sdk
         android:minSdkVersion="16"
         android:targetSdkVersion="17" />
+    
+    <permission
+        android:name="com.behannon.huntingcompanion.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
 
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <uses-permission android:name="com.behannon.huntingcompanion.permission.MAPS_RECEIVE" />
+    
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.INTERNET"/>
+	
 	<uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -57,7 +70,7 @@
         
 		<meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyAhWal9d8JrWyNgNEROiBmMZ4vTNK5_XQU" />
+            android:value="AIzaSyDpE7hk4-bvyIb51G0TjXtjgDEudqUVEVA" />
 		
     </application>
 

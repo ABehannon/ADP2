@@ -30,7 +30,7 @@
         android:gravity="center"
         android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
-        android:text="Dawn" />
+        android:text="Sunrise" />
 
     <TextView
         android:id="@+id/infoText3"
@@ -38,14 +38,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/dawnTimeText"
+        android:layout_below="@+id/sunriseTimeText"
         android:gravity="center"
         android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
-        android:text="Dusk" />
+        android:text="Sunset" />
 
     <TextView
-        android:id="@+id/dawnTimeText"
+        android:id="@+id/sunriseTimeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -57,7 +57,7 @@
         android:text="00:00" />
 
     <TextView
-        android:id="@+id/duskTimeText"
+        android:id="@+id/sunsetTimeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"

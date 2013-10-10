@@ -140,7 +140,7 @@ public class WeatherActivity extends Activity {
 		}
 	}
 
-	// Get the definition of the word requested
+	// Get the weather of the requested location
 	@SuppressWarnings("unused")
 	private void getWeather() {
 
