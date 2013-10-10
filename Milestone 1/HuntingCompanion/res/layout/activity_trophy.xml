@@ -36,8 +36,6 @@
         android:layout_above="@+id/addButton"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/infoText1" >
-
-    </ListView>
+        android:layout_below="@+id/infoText1" />
 
 </RelativeLayout>

@@ -25,7 +25,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/infoText1"
-        android:layout_centerHorizontal="true" >
+        android:layout_centerHorizontal="true"
+        android:entries="@array/calls_array"  >
+        
+        
 
     </ListView>
 

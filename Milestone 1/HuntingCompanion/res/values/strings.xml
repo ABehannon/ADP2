@@ -4,5 +4,10 @@
     <string name="app_name">Hunting Companion</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-
+    <string-array name="calls_array">
+        <item>Duck Call 1</item>
+        <item>Coyote Call 1</item>
+        <item>Turkey Call 1</item>
+        <item>Boar Call 1</item>
+    </string-array>
 </resources>
