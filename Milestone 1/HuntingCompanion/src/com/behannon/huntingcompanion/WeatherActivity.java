@@ -13,6 +13,7 @@ import org.json.JSONObject;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -35,6 +36,8 @@ public class WeatherActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_weather);
 
+		getActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM|ActionBar.DISPLAY_SHOW_HOME);
+		
 		weatherSetup();
 	}
 
@@ -42,7 +45,7 @@ public class WeatherActivity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.main, menu);
-		menu.getItem(5).setVisible(false);
+		menu.getItem(0).setVisible(false);
 		return true;
 	}
 
@@ -101,10 +104,10 @@ public class WeatherActivity extends Activity {
 		// Update weather
 		try {
 			if (internetConnection = true) {
-				cityText.setText("Updating...");
-				tempText.setText("Updating...");
-				weatherText.setText("Updating...");
-				windText.setText("Updating...");
+				cityText.setText("City\nUpdating...");
+				tempText.setText("Temperature\nUpdating...");
+				weatherText.setText("Weather\nUpdating...");
+				windText.setText("Wind Direction\nUpdating...");
 
 				getWeather();
 			} else {
@@ -112,10 +115,10 @@ public class WeatherActivity extends Activity {
 						"You are not currently connected to the internet.",
 						Toast.LENGTH_LONG).show();
 
-				cityText.setText("Unavailable");
-				tempText.setText("Unavailable");
-				weatherText.setText("Unavailable");
-				windText.setText("Unavailable");
+				cityText.setText("City\nUnavailable");
+				tempText.setText("Temperature\nUnavailable");
+				weatherText.setText("Weather\nUnavailable");
+				windText.setText("Wind Direction\nUnavailable");
 			}
 		} finally {
 
@@ -229,13 +232,16 @@ public class WeatherActivity extends Activity {
 				String getWindAmount = windInfo.getString("speed");
 
 				// Print out to screen
-				windText.setText("Wind Direction: " + getWindAmount + "MPH " + getWindDir);
-				weatherText.setText("Weather Type: " + getWeatherType);
-				tempText.setText("Temperature: " + getTemp + "¡F");
+				windText.setText("Wind Direction\n" + getWindAmount + "MPH " + getWindDir);
+				weatherText.setText("Weather Type\n" + getWeatherType);
+				tempText.setText("Temperature\n" + getTemp + "¡F");
 
 				System.out.println("JSON SUCCESSFUL");
 			} catch (JSONException e) {
 				Log.e("JSON", "JSON OBJECT EXCEPTION");
+				windText.setText("Wind Direction\nUnavailable");
+				weatherText.setText("Weather\nUnavailable");
+				tempText.setText("Temperature\nUnavailable");
 			}
 
 		}
@@ -275,7 +281,7 @@ public class WeatherActivity extends Activity {
 				System.out.println("JSON SUCCESSFUL");
 			} catch (JSONException e) {
 				Log.e("JSON", "JSON OBJECT EXCEPTION");
-				cityText.setText("Unavailable");
+				cityText.setText("City\nUnavailable");
 			}
 
 		}

@@ -5,6 +5,7 @@
 package com.behannon.huntingcompanion;
 
 import android.os.Bundle;
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
@@ -26,13 +27,15 @@ public class TrophyActivity extends Activity {
 		    }
 		});
 		
+		getActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM|ActionBar.DISPLAY_SHOW_HOME);
+		
 	}
 
 	//Menu List Setup
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.main, menu);
-		menu.getItem(1).setVisible(false);
+		menu.getItem(4).setVisible(false);
 		return true;
 	}
 	
