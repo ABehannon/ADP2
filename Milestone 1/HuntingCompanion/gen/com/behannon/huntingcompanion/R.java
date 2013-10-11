@@ -197,8 +197,8 @@ containing a value of this type.
         public static final int weathericon=0x7f020024;
     }
     public static final class id {
-        public static final int Button01=0x7f050011;
-        public static final int Button02=0x7f050012;
+        public static final int Button01=0x7f050012;
+        public static final int Button02=0x7f05000f;
         public static final int EditText01=0x7f05000a;
         public static final int EditText02=0x7f05000c;
         public static final int TextView01=0x7f050009;
@@ -217,7 +217,7 @@ containing a value of this type.
         public static final int hybrid=0x7f050004;
         public static final int infoText1=0x7f050006;
         public static final int infoText2=0x7f050007;
-        public static final int infoText3=0x7f05000f;
+        public static final int infoText3=0x7f050011;
         public static final int linearLayout1=0x7f050014;
         public static final int linearLayout2=0x7f050017;
         public static final int listView1=0x7f05000d;
