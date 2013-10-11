@@ -154,12 +154,30 @@ public class TimerActivity extends Activity {
 		String URLp2 = "&ic=1&api_key=qcuk7wnvmhx4238nk7d2jn96";
 		String moddedURL = URLp1 + zipcode + URLp2;
 		String encodeURL;
+		
+		// Create init variables and fix URL info zip
+		String zipURLp1 = "http://zipcodedistanceapi.redline13.com/rest/oxT5EaVv5gSTGzpKOpJcopnrF3FWv8gUF9ZkjVQpcIiThID67niwMGYsJDpfMF9s/info.json/";
+		String zipURLp2 = "/degrees";
+		String moddedURL2 = zipURLp1 + zipcode + zipURLp2;
+		String zipencodeURL;	
 
 		try {
 			encodeURL = URLEncoder.encode(moddedURL, "UTF-8");
 		} catch (Exception e) {
 			Log.e("Encoding Failure", "Bad URL");
 			encodeURL = "";
+		}
+		
+		// zipcode info
+		URL finalURL2;
+		try {
+			finalURL2 = new URL(moddedURL2);
+			zipcodeRequest newRequest = new zipcodeRequest();
+			newRequest.execute(finalURL2);
+			System.out.println("Modded URL: " + moddedURL2);
+		} catch (MalformedURLException e) {
+			Log.e("Bad URL", "Malformed URL");
+			finalURL2 = null;
 		}
 
 		// time info
@@ -235,6 +253,44 @@ public class TimerActivity extends Activity {
 			}
 
 		}
+	}
+	
+	// Background tasks going on when using tool
+	private class zipcodeRequest extends AsyncTask<URL, Void, String> {
 
+		@Override
+		protected String doInBackground(URL... urls) {
+			String response = "";
+			for (URL url : urls) {
+				response = Web.getURLStringResponse(url);
+
+			}
+			return response;
+		}
+
+		@Override
+		protected void onPostExecute(String result) {
+
+			// Setting up textViews for updating
+			TextView cityText = (TextView) findViewById(R.id.cityText);
+
+			// Get JSON info for zip
+			try {
+				// JSON Object grab
+				JSONObject json2 = new JSONObject(result);
+
+				// String set from json
+				String zipInfo = json2.getString("city");
+
+				// Print out to screen
+				cityText.setText(zipInfo);
+
+				System.out.println("JSON SUCCESSFUL");
+			} catch (JSONException e) {
+				Log.e("JSON", "JSON OBJECT EXCEPTION");
+				cityText.setText("City\nUnavailable");
+			}
+
+		}
 	}
 }

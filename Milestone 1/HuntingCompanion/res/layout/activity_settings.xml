@@ -32,9 +32,10 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/infoText1"
         android:gravity="center"
-        android:text="Zipcode Settings"
+        android:text="Weather"
         android:textColor="#FFFFFF"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:textStyle="bold"  />
 
     <EditText
         android:id="@+id/editText1"
@@ -52,28 +53,19 @@
         <requestFocus />
     </EditText>
 
-    <Button
-        android:id="@+id/zipcodeButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/editText1"
-        android:text="Update Zipcode"
-        android:textColor="#FFFFFF" />
-
     <TextView
         android:id="@+id/infoText3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/zipcodeButton"
+        android:layout_below="@+id/editText1"
         android:gravity="center"
         android:paddingTop="@dimen/activity_vertical_margin"
-        android:text="Map Marker Settings"
+        android:text="Map Locations"
         android:textColor="#FFFFFF"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:textStyle="bold"  />
 
     <Button
         android:id="@+id/markerButton"
@@ -94,9 +86,10 @@
         android:layout_below="@+id/markerButton"
         android:gravity="center"
         android:paddingTop="@dimen/activity_vertical_margin"
-        android:text="Trophy Settings"
+        android:text="Trophy Tracking"
         android:textColor="#FFFFFF"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:textStyle="bold"  />
 
     <Button
         android:id="@+id/Button01"
@@ -106,6 +99,16 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/TextView01"
         android:text="Clear Trophies"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/Button02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:text="Save Settings"
         android:textColor="#FFFFFF" />
 
 </RelativeLayout>
