@@ -53,7 +53,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1.00"
             android:adjustViewBounds="true"
-            android:src="@drawable/loader_spinner" />
+            android:src="@drawable/loadingimage" />
 
         <TextView
             android:id="@+id/tempText"

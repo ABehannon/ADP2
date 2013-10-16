@@ -4,6 +4,8 @@
 
 package com.behannon.huntingcompanion;
 
+import java.io.File;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -55,12 +57,26 @@ public class SettingsActivity extends Activity {
 					
 				} else{
 					Toast.makeText(getApplicationContext(),
-							"The zipcode length is incorrect.", Toast.LENGTH_LONG)
+							"The zipcode length is incorrect", Toast.LENGTH_LONG)
 							.show();
 				}
 				
 			}
 		});
+		
+		// Button for clearing markers
+				Button markerButton = (Button) findViewById(R.id.markerButton);
+				markerButton.setOnClickListener(new View.OnClickListener() {
+					public void onClick(View v) {
+						String dir = getFilesDir().getAbsolutePath();
+						File file = new File(dir, "latlngpoints.txt");
+						boolean deleted = file.delete();
+						
+						Toast.makeText(getApplicationContext(),
+								"Map markers have been cleared", Toast.LENGTH_LONG)
+								.show();
+					}
+				});
 
 	}
 	

@@ -59,7 +59,7 @@ int drawable ic_plusone_medium_off_client 0x7f02001c
 int drawable ic_plusone_small_off_client 0x7f02001d
 int drawable ic_plusone_standard_off_client 0x7f02001e
 int drawable ic_plusone_tall_off_client 0x7f02001f
-int drawable loader_spinner 0x7f020020
+int drawable loadingimage 0x7f020020
 int drawable mapicon 0x7f020021
 int drawable settingsicon 0x7f020022
 int drawable timericon 0x7f020023
