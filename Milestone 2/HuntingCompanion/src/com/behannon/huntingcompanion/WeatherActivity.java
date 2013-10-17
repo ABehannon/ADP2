@@ -262,7 +262,7 @@ public class WeatherActivity extends Activity {
 				// String set from json
 				String getTemp = weatherInfo.getString("temp");
 				String getWeatherType = weatherInfo.getString("weather_text");
-				String getWindDir = windInfo.getString("dir");
+				String getWindDir = windInfo.getString("dir").replace("Not Available", "");;
 				String getWindAmount = windInfo.getString("speed");
 				int getWeatherCode = Integer.valueOf(weatherInfo.getString("weather_code"));
 

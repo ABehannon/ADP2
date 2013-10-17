@@ -21,7 +21,7 @@
         android:paddingTop="@dimen/activity_vertical_margin"
         android:text="My Settings"
         android:textColor="#FFFFFF"
-        android:textSize="24sp"
+        android:textSize="36sp"
         android:textStyle="bold" />
 
     <TextView
@@ -34,7 +34,7 @@
         android:gravity="center"
         android:text="Weather"
         android:textColor="#FFFFFF"
-        android:textSize="16sp"
+        android:textSize="28sp"
         android:textStyle="bold" />
 
     <Button
@@ -58,7 +58,7 @@
         android:paddingTop="@dimen/activity_vertical_margin"
         android:text="Trophy Tracking"
         android:textColor="#FFFFFF"
-        android:textSize="16sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <TextView
@@ -71,7 +71,7 @@
         android:gravity="center"
         android:text="City Zip Code"
         android:textColor="#FFFFFF"
-        android:textSize="16sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <EditText
@@ -85,7 +85,7 @@
         android:inputType="number"
         android:text=""
         android:textColor="#FFFFFF"
-        android:textSize="16sp" >
+        android:textSize="20sp" >
 
         <requestFocus />
     </EditText>
@@ -101,7 +101,7 @@
         android:paddingTop="@dimen/activity_vertical_margin"
         android:text="Map Locations"
         android:textColor="#FFFFFF"
-        android:textSize="16sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <Button

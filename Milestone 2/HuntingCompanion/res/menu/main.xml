@@ -16,7 +16,7 @@
         android:id="@+id/action_calls"
         android:icon="@drawable/callicon"
         android:orderInCategory="103"
-        android:showAsAction="ifRoom"
+        android:showAsAction="always"
         android:title="Calls"/>
 	<item
         android:id="@+id/action_map"

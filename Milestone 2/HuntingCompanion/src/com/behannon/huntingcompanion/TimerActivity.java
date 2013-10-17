@@ -15,6 +15,7 @@ import java.util.TimeZone;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.behannon.huntingcompanion.lib.FileSaving;
 import com.behannon.huntingcompanion.lib.Web;
 
 import android.os.AsyncTask;
@@ -26,6 +27,8 @@ import android.content.Intent;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,6 +38,9 @@ public class TimerActivity extends Activity {
 	Context _context;
 	Boolean _connected;
 	Boolean internetConnection = true;
+	String zipcode;
+	String sunrise;
+	String sunset;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +50,55 @@ public class TimerActivity extends Activity {
 		getActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM|ActionBar.DISPLAY_SHOW_HOME);
 		
 		timerSetup();
+		
+		Button sunriseButton = (Button)findViewById(R.id.sunriseButton);
+		sunriseButton.setOnClickListener(new View.OnClickListener() {
+		    public void onClick(View v) {
+		    	Toast.makeText(getApplicationContext(),
+						"Sunrise Timer Clicked",
+						Toast.LENGTH_SHORT).show();
+		    }
+		});
+		
+		Button sunsetButton = (Button)findViewById(R.id.sunsetButton);
+		sunsetButton.setOnClickListener(new View.OnClickListener() {
+		    public void onClick(View v) {
+		    	Toast.makeText(getApplicationContext(),
+						"Sunset Timer Clicked",
+						Toast.LENGTH_SHORT).show();
+		    }
+		});
 
+	}
+	
+	public void displayZipData() {
+
+		String read = FileSaving.readStringFile(this, "zipData", false);
+
+		// Init variables
+		JSONObject json;
+		
+		try {
+
+			// create json from the file loaded
+			json = new JSONObject(read);
+			
+			// Set the zipcode for data retreival
+			zipcode = json.get("zip").toString();
+			
+			System.out.println("Saved JSON Data: " + json);
+			
+			getTimes();
+
+		} catch (JSONException e) {
+
+			zipcode = "68118";
+			e.printStackTrace();
+			
+			getTimes();
+			
+
+		}
 	}
 
 	// Menu List Setup
@@ -109,7 +163,7 @@ public class TimerActivity extends Activity {
 				sunriseText.setText("Updating...");
 				sunsetText.setText("Updating...");
 
-				getTimes();
+				displayZipData();
 			} else {
 				Toast.makeText(getApplicationContext(),
 						"You are not currently connected to the internet.",
@@ -146,12 +200,9 @@ public class TimerActivity extends Activity {
 	@SuppressWarnings("unused")
 	private void getTimes() {
 
-		// Temp string
-		String zipcode = "68118";
-
 		// Create init variables and fix URL info for timers
-		String URLp1 = "http://i.wxbug.net/REST/Direct/GetObs.ashx?zip=";
-		String URLp2 = "&ic=1&api_key=qcuk7wnvmhx4238nk7d2jn96";
+		String URLp1 = "http://api.wunderground.com/api/7de62da5b7cef6d0/astronomy/q/";
+		String URLp2 = ".json";
 		String moddedURL = URLp1 + zipcode + URLp2;
 		String encodeURL;
 		
@@ -214,33 +265,34 @@ public class TimerActivity extends Activity {
 			// Setting up textViews for updating
 			TextView sunriseText = (TextView) findViewById(R.id.sunriseTimeText);
 			TextView sunsetText = (TextView) findViewById(R.id.sunsetTimeText);
-
-			// Get JSON info for zip
+		
+			// Get JSON info for zip	
 			try {
 				// JSON Object grab
 				JSONObject json = new JSONObject(result);
+				
+				
+				int sunriseHour = Integer.valueOf(json.getJSONObject("moon_phase").getJSONObject("sunrise").getString("hour"));
+				int sunriseMinute = Integer.valueOf(json.getJSONObject("moon_phase").getJSONObject("sunrise").getString("minute"));
+				int sunsetHour = Integer.valueOf(json.getJSONObject("moon_phase").getJSONObject("sunset").getString("hour"));
+				int sunsetMinute = Integer.valueOf(json.getJSONObject("moon_phase").getJSONObject("sunset").getString("minute"));
+				
+				//Keeps sunrise in 12 hour format
+				if(sunriseHour > 12){
+					sunriseHour = sunriseHour - 12;
+					sunrise = sunriseHour + ":" + sunriseMinute;
+				} else{
+					sunrise = sunriseHour + ":" + sunriseMinute;
+				}
 
-				// String set from json
-				String sunriseInit = json.getString("sunriseDateTime");
-				String sunsetInit = json.getString("sunsetDateTime");
-
-				long sunriseEpoch = Long.parseLong(sunriseInit);
-				long sunsetEpoch = Long.parseLong(sunsetInit);
-
-				// Calc dates from Unix
-				Date d = new Date(sunriseEpoch * 1000);
-				Date d2 = new Date(sunsetEpoch * 1000);
-
-				// Date format
-				SimpleDateFormat f = new SimpleDateFormat("HH:mm");
-				f.setTimeZone(TimeZone.getTimeZone("CST"));
-
-				// Outputs from date formatting
-				String sunrise = f.format(d);
-				String sunset = f.format(d2);
-				System.out.println("Sunrise: " + sunrise);
-				System.out.println("Sunset: " + sunset);
-
+				//Keeps sunset in 12 hour format
+				if(sunsetHour > 12){
+					sunsetHour = sunsetHour - 12;
+					sunset = sunsetHour + ":" + sunsetMinute;
+				} else{
+					sunset = sunsetHour + ":" + sunsetMinute;
+				}
+				
 				// Print out to screen
 				sunriseText.setText(sunrise + " AM");
 				sunsetText.setText(sunset + " PM");
