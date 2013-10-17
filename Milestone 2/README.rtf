@@ -1,0 +1,49 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf510
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qc
+
+\f0\fs24 \cf0 *****************************************\
+* HUNTING COMPANION README *\
+*****************************************\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 Functionality broken down based by activity/feature:\
+\
+Weather Report\
+----------------------\
+-Zip code defaulted to "68118"  To modify, go to settings activity and enter new zip code then save.\
+-City (based on latitude and longitude), weather type, temperature, and wind direction/speed via API\
+-Will state that its either "Updating" information or that the information is "Unavailable"\
+-Image used to describe weather will appear as ? while loading, or if an unknown/unhandled weather time by API.\
+\
+Timers\
+----------------------\
+-Zip code defaulted to "68118"  To modify, go to settings activity and enter new zip code then save.\
+-Shows time given for sunset and sunrise based on the time zone from zip code.\
+-Buttons will display toast, but not set alarm\
+\
+Map\
+-----------------------\
+-Map will attempt to zoom near user's last known GPS location if possible.\
+-Press down on a single spot in the map for a few seconds to add a marker.\
+-Placed markers are currently defaulted to the lat/long of the area pressed.\
+-Currently satellite is the only allowed setting for map type\
+-GPS works if device supports it\
+-Individual mark removal not currently available, go to settings activity and press "clear markers" button to remove.\
+\
+Trophies\
+----------------------\
+-Listview is only visibly functional. Cannot add/remove items.\
+-Press "Add Trophy" button to go to add trophy page.\
+\
+Settings\
+----------------------\
+-Zip code locally saved to storage, and will default to 68118. Enter new zip and hit save at bottom to update.\
+-Clear markers button deletes the markers file.\
+\
+Calls\
+----------------------\
+-Click on name of animal call to play sound based on the item chosen.\
+-Not all sounds are final sounds, some are too long.}

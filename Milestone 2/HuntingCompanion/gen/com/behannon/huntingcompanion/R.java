@@ -203,12 +203,12 @@ containing a value of this type.
         public static final int EditText02=0x7f06000c;
         public static final int TextView01=0x7f060009;
         public static final int TextView02=0x7f06000b;
-        public static final int action_calls=0x7f060022;
-        public static final int action_map=0x7f060023;
-        public static final int action_settings=0x7f060025;
-        public static final int action_timers=0x7f060021;
-        public static final int action_trophies=0x7f060024;
-        public static final int action_weather=0x7f060020;
+        public static final int action_calls=0x7f060026;
+        public static final int action_map=0x7f060027;
+        public static final int action_settings=0x7f060029;
+        public static final int action_timers=0x7f060025;
+        public static final int action_trophies=0x7f060028;
+        public static final int action_weather=0x7f060024;
         public static final int addButton=0x7f06001b;
         public static final int backButton=0x7f060005;
         public static final int callsList=0x7f06000d;
@@ -219,7 +219,11 @@ containing a value of this type.
         public static final int infoText3=0x7f060011;
         public static final int linearLayout1=0x7f060014;
         public static final int linearLayout2=0x7f060017;
-        public static final int listView_main=0x7f06001a;
+        public static final int list_complex_caption=0x7f060021;
+        public static final int list_complex_title=0x7f060020;
+        public static final int list_header_title=0x7f060022;
+        public static final int list_item_title=0x7f060023;
+        public static final int list_journal=0x7f06001a;
         public static final int map=0x7f06000e;
         public static final int markerButton=0x7f060010;
         public static final int none=0x7f060000;
@@ -246,6 +250,9 @@ containing a value of this type.
         public static final int activity_trophy=0x7f030005;
         public static final int activity_viewpager=0x7f030006;
         public static final int activity_weather=0x7f030007;
+        public static final int list_complex=0x7f030008;
+        public static final int list_header=0x7f030009;
+        public static final int list_item=0x7f03000a;
     }
     public static final class menu {
         public static final int main=0x7f0b0000;

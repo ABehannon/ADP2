@@ -25,7 +25,7 @@
         android:textStyle="bold" />
 
     <ListView
-        android:id="@+id/listView_main"
+        android:id="@+id/list_journal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/addButton"
