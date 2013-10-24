@@ -1,0 +1,40 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+	<item
+        android:id="@+id/action_weather"
+        android:icon="@drawable/weathericon"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="Weather"/>
+	<item
+        android:id="@+id/action_timers"
+        android:icon="@drawable/timericon"
+        android:orderInCategory="101"
+        android:showAsAction="always"
+        android:title="Timers"/>
+	<item
+        android:id="@+id/action_calls"
+        android:icon="@drawable/callicon"
+        android:orderInCategory="103"
+        android:showAsAction="always"
+        android:title="Calls"/>
+	<item
+        android:id="@+id/action_map"
+        android:icon="@drawable/mapicon"
+        android:orderInCategory="102"
+        android:showAsAction="always"
+        android:title="Map"/>
+	<item
+        android:id="@+id/action_trophies"
+        android:icon="@drawable/trophyicon"
+        android:orderInCategory="104"
+        android:showAsAction="ifRoom"
+        android:title="Trophies"/>
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@drawable/settingsicon"
+        android:orderInCategory="105"
+        android:showAsAction="ifRoom"
+        android:title="Settings"/>
+
+</menu>
